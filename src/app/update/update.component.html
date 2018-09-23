@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <h4>Add New User</h4>
+  <form style="width: 50%" [formGroup]="updateForm" (submit)="update()">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control"placeholder="First Name" formControlName="first_name">
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name" formControlName="last_name">
+    </div>
+    <div class="form-group">
+      <label>User Name</label>
+      <input type="text" class="form-control" placeholder="User Name" formControlName="user_name">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" placeholder="Password" formControlName="password">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control" placeholder="Email" formControlName="email">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div>
+      <a routerLink="/">View list of users</a>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="errors.length > 0">
+      {{errors}}
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="success.length > 0">
+      {{success}}
+    </div>
+  </form>
+</div>
+
